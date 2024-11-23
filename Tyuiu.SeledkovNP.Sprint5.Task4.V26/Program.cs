@@ -30,6 +30,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task4.V26
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask4.txt");
             string path = @"\Users\Vaennet\source\repos\Tyuiu.SeledkovNP.Sprint5\DataSprint5\InPutDataFileTask4V26.txt";
             //  C:\Users\Vaennet\source\repos\Tyuiu.SeledkovNP.Sprint5\Tyuiu.SeledkovNP.Sprint5.Task4.V26\bin\Debug\net8.0\OutPutFileTask1.txt
             //  C:\Users\Vaennet\source\repos\Tyuiu.SeledkovNP.Sprint5\DataSprint5\InPutDataFileTask4V26.txt
