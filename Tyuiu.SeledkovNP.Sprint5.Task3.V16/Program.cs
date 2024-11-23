@@ -1,4 +1,10 @@
-﻿using Tyuiu.SeledkovNP.Sprint5.Task3.V16.Lib;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using Tyuiu.SeledkovNP.Sprint5.Task3.V16.Lib;
 namespace Tyuiu.SeledkovNP.Sprint5.Task3.V16
 {
     internal class Program
