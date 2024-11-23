@@ -5,6 +5,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task3.V16
     {
         static void Main(string[] args)
         {
+            DataService ds = new DataService();
             Console.Title = "Спринт #5 | Выполнил: Селедков.Н.П | Смартб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
@@ -21,11 +22,18 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task3.V16
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-
+            int x = 3;
+            Console.WriteLine($"x = {x}");
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
+
+            string res = ds.SaveToFileTextData(x);
+
+            Console.WriteLine(Math.Round((2 * Math.Pow(x, 2) - 1) / Math.Sqrt(Math.Pow(x, 2) - 2), 3));
+            Console.WriteLine("Файл: " + res);
+            Console.WriteLine("Создан!");
 
             Console.ReadLine();
         }

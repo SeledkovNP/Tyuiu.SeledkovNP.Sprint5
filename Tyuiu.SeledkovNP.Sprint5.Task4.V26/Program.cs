@@ -1,10 +1,15 @@
-﻿using Tyuiu.SeledkovNP.Sprint5.Task4.V26.Lib;
+﻿using System.Diagnostics;
+using System.IO;
+using Tyuiu.SeledkovNP.Sprint5.Task4.V26.Lib;
+
 namespace Tyuiu.SeledkovNP.Sprint5.Task4.V26
+
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            DataService ds = new DataService();
             Console.Title = "Спринт #5 | Выполнил: Селедков.Н.П | Смартб-24-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
@@ -21,12 +26,14 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task4.V26
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-
-
+            string path = @"C:\Users\Vaennet\source\repos\Tyuiu.SeledkovNP.Sprint5\DataSprint5\InPutDataFileTask4V26.txt";
+        
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
+            double res = ds.LoadFromDataFile(path);
+            Console.WriteLine(res);
             Console.ReadLine();
         }
     }
