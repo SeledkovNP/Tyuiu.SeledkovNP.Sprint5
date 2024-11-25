@@ -38,7 +38,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task5.V26
 
 
             double res = ds.LoadFromDataFile(path);
-            Console.WriteLine("Сумма всех эллементов: " + res);
+            Console.WriteLine(" Разница суммы всех элементов: " + res);
             Console.ReadLine();
 
             

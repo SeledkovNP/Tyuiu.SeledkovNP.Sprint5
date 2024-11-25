@@ -27,23 +27,27 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task5.V26.Lib
 
                     foreach (string number in numbers)
                     {
-                        if (double.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))
-                        {
-                            if (value > 0)
+                        if (number.Contains(".") || number.Contains(","))
+                        { 
+                            if (double.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))
                             {
-                                positiveSum += value;               //  positiveSum будет   +
+                                if (value > 0)
+                                {
+                                    positiveSum += value;               //  positiveSum будет   +
+                                }
+                                else if (value < 0)
+                                {
+                                    negativeSum += value;               // negativeSum будет    -
+                                }
                             }
-                            else if (value < 0)
-                            {
-                                negativeSum += value;               // negativeSum будет    -
-                            }
-                        }
                         else
                         {
                             Console.WriteLine($"Не удалось преобразовать '{number}' в double.");
                         }
+                      }
                     }
                 }
+               
             }
 
 
