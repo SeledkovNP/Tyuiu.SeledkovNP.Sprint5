@@ -36,9 +36,12 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task5.V26
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
+
             double res = ds.LoadFromDataFile(path);
             Console.WriteLine("Сумма всех эллементов: " + res);
             Console.ReadLine();
+
+            
         }
     }
 }

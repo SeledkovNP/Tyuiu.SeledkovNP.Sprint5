@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using tyuiu.cources.programming.interfaces.Sprint5;
 using System.IO;
 using System.Globalization;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 namespace Tyuiu.SeledkovNP.Sprint5.Task5.V26.Lib
 {
     public class DataService : ISprint5Task5V26
@@ -13,32 +15,43 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task5.V26.Lib
         public double LoadFromDataFile(string path)
         {
 
-            double res = 0;
+            double positiveSum = 0;
+            double negativeSum = 0;
+
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    
-                    string[] numbers = line.Split(' ');             // Разделяем строку на части по пробелам
+                    string[] numbers = line.Split(' ');
 
                     foreach (string number in numbers)
                     {
-                             // Мой спаситель, который из точки сделает запетую
-                        if (double.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))               // Преобразуем каждую часть в double и добавляем к результату
+                        if (double.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))
                         {
-                            res += value;
+                            if (value > 0)
+                            {
+                                positiveSum += value;               //  positiveSum будет   +
+                            }
+                            else if (value < 0)
+                            {
+                                negativeSum += value;               // negativeSum будет    -
+                            }
                         }
                         else
                         {
-                            
-                            Console.WriteLine($"Не удалось преобразовать '{number}' в double.");           // Обработка случая, если преобразование не удалось 
+                            Console.WriteLine($"Не удалось преобразовать '{number}' в double.");
                         }
                     }
                 }
             }
-            return Math.Round(res, 3);
+
+
+            double difference = positiveSum + Math.Abs(negativeSum);          // negativeSum отрицательный, поэтому берем abs
+            return Math.Round(difference, 3);
 
         }
+
+        
     }
 }
