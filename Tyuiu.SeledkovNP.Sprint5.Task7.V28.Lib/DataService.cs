@@ -20,8 +20,8 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
             string inputFilePath = path;
             string outputFilePath = @"C:\DataSprint5\InOutPutDataFileTask7V28.txt";
 
-          //  try
-           // {
+            try
+            {
                 // Чтение содержимого входного файла
                 if (!File.Exists(inputFilePath))
                 {
@@ -40,13 +40,13 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
                 Console.WriteLine("Обработка завершена. Результат сохранён в InOutPutDataFileTask7V28.txt");
 
                 
-           // }
-           // catch (Exception ex)
-           // {
-           //    Console.WriteLine("Произошла ошибка: " + ex.Message);
-           // }
-            return outputFilePath;
-            //return "Это строка с пробелами";
+            }
+             catch (Exception ex)
+             {
+                Console.WriteLine("Произошла ошибка: " + ex.Message);
+             }
+            
+            return "Это строка с пробелами";
         }
     }
 }
