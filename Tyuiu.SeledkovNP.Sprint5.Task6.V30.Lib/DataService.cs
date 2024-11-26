@@ -20,21 +20,25 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task6.V30.Lib
             {
 
                 string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-
-                    for (int i = 0; i < line.Length; i++)
+                
+                 while ((line = reader.ReadLine()) != null)
+                 {
+                    
+                   // for (int i = 0; i < line.Length; i++)     щитаем слова на каждую букву
                     {
-                        if (line.Length == 8)
+                        string[] words = line.Split(new char[] { ' '});
+                        foreach (var word in words)
                         {
-                            count++;
+                            if (word.Length == 8)
+                            {
+                                count++;
+                            }
                         }
-
                     }
-
-
-                }
-            }
+                     
+                     
+                 }
+            } 
             return count;
 
 
