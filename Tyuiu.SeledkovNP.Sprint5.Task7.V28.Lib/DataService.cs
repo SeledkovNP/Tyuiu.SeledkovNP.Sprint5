@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Reflection.Metadata;
 using System.Reflection.PortableExecutable;
 using System.Text.RegularExpressions;
+using System.Net.Http.Headers;
 namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
 {
     public class DataService : ISprint5Task7V28
@@ -15,22 +16,65 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
         public string LoadDataAndSave(string path)
         {
 
-            
-            string outputPath = "OutPutDataFileTask7V28.txt";                  
+
+            /*
+             * string pathSaveFile = "OutPutDataFileTask7V28.txt";                  
 
             string inputData = File.ReadAllText(path);                       // Читаем все строки из входного файла
 
 
-            string cleanedData = Regex.Replace(inputData, @"s{2,}", " "); 
-            //string cleanedData = path.Replace(inputData, @"\s{2,}", ' ');  // замены пробелов
+            FileInfo fileInfo = new FileInfo(pathSaveFile);
+            bool fileExists = fileInfo.Exists;
 
-            //string cleanedData = path.Replace( '  ', ' ');
-
-            File.WriteAllText(outputPath, cleanedData);                  // Сохраняем результат в выходной файл
+            //  myString = Regex.Replace(myString, @"\s+", " ");
 
 
-            return outputPath;
+            string strLine = "";
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        strLine = strLine.Replace("  ", " ") + line[i];
+                    }
 
+                    File.WriteAllText(pathSaveFile, strLine + Environment.NewLine);
+                    strLine = "";
+                }
+            }
+
+            return pathSaveFile; 
+            */
+
+            string inputFilePath = path;
+            string outputFilePath = @"C:\DataSprint5\InOutPutDataFileTask7V28.txt";
+
+            try
+            {
+                // Чтение содержимого входного файла
+                if (!File.Exists(inputFilePath))
+                {
+                    Console.WriteLine("Файл с входными данными не найден!");
+                    
+                }
+               
+                string inputData = File.ReadAllText(inputFilePath);
+
+                // Замена последовательностей пробелов на один пробел
+                string outputData = Regex.Replace(inputData, @"\s{2,}", " ");
+
+                // Сохранение результата в выходной файл
+                File.WriteAllText(outputFilePath, outputData);
+
+                Console.WriteLine("Обработка завершена. Результат сохранён в InOutPutDataFileTask7V28.txt");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Произошла ошибка: " + ex.Message);
+            }
+            return "" ;
         }
     }
 }

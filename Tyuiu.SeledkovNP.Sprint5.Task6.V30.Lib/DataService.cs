@@ -26,7 +26,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task6.V30.Lib
                     
                    // for (int i = 0; i < line.Length; i++)     щитаем слова на каждую букву
                     {
-                        string[] words = line.Split(new char[] { ' '});
+                        string[] words = line.Split(new char[] { ' '});  //Разделает по словам
                         foreach (var word in words)
                         {
                             if (word.Length == 8)

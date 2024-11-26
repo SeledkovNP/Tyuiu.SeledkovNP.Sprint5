@@ -31,8 +31,8 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28
             // Это  строка  с  пробелам
 
 
-            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask7V28.txt");
-            string pathSaveFile = Path.Combine(Path.GetTempPath(), "OutPutFileTask7V28.txt");
+            string path = Path.Combine(Path.GetTempPath(), "C:\\DataSprint5\\InOutPutDataFileTask7V28.txt");
+            string pathSaveFile = Path.Combine(Path.GetTempPath(), "InOutPutDataFileTask7V28.txt");
 
             Console.WriteLine($"Данные находятся в файле: {path}");
 
