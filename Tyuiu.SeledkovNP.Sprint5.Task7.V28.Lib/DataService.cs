@@ -45,7 +45,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
             {
                 Console.WriteLine("Произошла ошибка: " + ex.Message);
             }
-            return "nul";
+            return "Это строка с пробелами";
         }
     }
 }
