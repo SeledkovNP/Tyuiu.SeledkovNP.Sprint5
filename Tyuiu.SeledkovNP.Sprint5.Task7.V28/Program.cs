@@ -41,7 +41,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28
 
 
             string res = ds.LoadDataAndSave(path);
-            Console.WriteLine(" Ответ: " + res);
+            Console.WriteLine(" Ответ: " + path);
             Console.ReadLine();
 
         }

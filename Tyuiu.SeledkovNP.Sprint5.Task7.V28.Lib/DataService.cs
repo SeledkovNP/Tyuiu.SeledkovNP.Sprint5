@@ -16,11 +16,11 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
         {
 
             
-            string outputPath = "OutPutDataFileTask7V28.txt";                  // Определяем имя выходного файла
+            string outputPath = "OutPutDataFileTask7V28.txt";                  
 
             string inputData = File.ReadAllText(path);                       // Читаем все строки из входного файла
 
-            string cleanedData = Regex.Replace(inputData, @"s{2,}", " ");  // Используем регулярное выражение для замены пробелов
+            string cleanedData = Regex.Replace(inputData, @"s{2,}", " ");  // замены пробелов
 
             File.WriteAllText(outputPath, cleanedData);                  // Сохраняем результат в выходной файл
 
