@@ -20,7 +20,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
 
             string inputData = File.ReadAllText(path);                       // Читаем все строки из входного файла
 
-            string cleanedData = Regex.Replace(inputData, @"s{2,}", " ");  // замены пробелов
+            string cleanedData = Regex.Replace(inputData, @"\s{2,}", " ");  // замены пробелов
 
             File.WriteAllText(outputPath, cleanedData);                  // Сохраняем результат в выходной файл
 
