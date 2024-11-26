@@ -43,9 +43,14 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28
             Console.WriteLine("Находится в файле: ");
             pathSaveFile = ds.LoadDataAndSave(path);
             Console.WriteLine(pathSaveFile);
+
+            Console.WriteLine(path);
+
+
+
             Console.ReadKey();
 
-
+            
 
         }
     }

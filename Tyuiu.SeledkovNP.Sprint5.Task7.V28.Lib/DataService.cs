@@ -17,37 +17,6 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
         {
 
 
-            /*
-             * string pathSaveFile = "OutPutDataFileTask7V28.txt";                  
-
-            string inputData = File.ReadAllText(path);                       // Читаем все строки из входного файла
-
-
-            FileInfo fileInfo = new FileInfo(pathSaveFile);
-            bool fileExists = fileInfo.Exists;
-
-            //  myString = Regex.Replace(myString, @"\s+", " ");
-
-
-            string strLine = "";
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    for (int i = 0; i < line.Length; i++)
-                    {
-                        strLine = strLine.Replace("  ", " ") + line[i];
-                    }
-
-                    File.WriteAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
-                }
-            }
-
-            return pathSaveFile; 
-            */
-
             string inputFilePath = path;
             string outputFilePath = @"C:\DataSprint5\InOutPutDataFileTask7V28.txt";
 
@@ -59,7 +28,7 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
                     Console.WriteLine("Файл с входными данными не найден!");
                     
                 }
-               
+                
                 string inputData = File.ReadAllText(inputFilePath);
 
                 // Замена последовательностей пробелов на один пробел
@@ -69,12 +38,14 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28.Lib
                 File.WriteAllText(outputFilePath, outputData);
 
                 Console.WriteLine("Обработка завершена. Результат сохранён в InOutPutDataFileTask7V28.txt");
+
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Произошла ошибка: " + ex.Message);
             }
-            return "" ;
+            return "nul";
         }
     }
 }
