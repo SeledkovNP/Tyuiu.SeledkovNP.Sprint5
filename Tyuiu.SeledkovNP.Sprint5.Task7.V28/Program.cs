@@ -32,17 +32,20 @@ namespace Tyuiu.SeledkovNP.Sprint5.Task7.V28
 
 
             string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask7V28.txt");
-            // поиск файла OutPutFileTask7.txt
-            Console.WriteLine("Данные находяться в файле: " + path);
+            string pathSaveFile = Path.Combine(Path.GetTempPath(), "OutPutFileTask7V28.txt");
 
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
+            Console.WriteLine($"Данные находятся в файле: {path}");
+
+            Console.WriteLine("******************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                                 *");
+            Console.WriteLine("******************************************************************************");
+
+            Console.WriteLine("Находится в файле: ");
+            pathSaveFile = ds.LoadDataAndSave(path);
+            Console.WriteLine(pathSaveFile);
+            Console.ReadKey();
 
 
-            string res = ds.LoadDataAndSave(path);
-            Console.WriteLine(" Ответ: " + path);
-            Console.ReadLine();
 
         }
     }
